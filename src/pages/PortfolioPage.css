@@ -410,13 +410,15 @@
 
 .skillGroupGrid,
 .projectGrid,
-.eduTimeline {
+.eduTimeline,
+.impactGrid {
   display: grid;
   gap: 12px;
 }
 
 .skillGroupGrid,
-.eduTimeline {
+.eduTimeline,
+.impactGrid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -429,6 +431,40 @@
 .projectCard {
   padding: 18px;
   transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.impactCard {
+  padding: 20px;
+  border: 1px solid var(--chip-border);
+  background: linear-gradient(140deg, color-mix(in srgb, var(--surface), black 6%), var(--surface-strong));
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.impactCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent), transparent 58%);
+}
+
+.impactMetric {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+.impactCard h3 {
+  margin: 10px 0 0;
+  text-transform: uppercase;
+  font-size: 1.02rem;
+}
+
+.impactCard p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.56;
 }
 
 .skillGroupCard:hover,
@@ -517,6 +553,23 @@
   font-size: 0.74rem;
 }
 
+.caseStudyBlock {
+  margin: 12px 0;
+  padding: 10px;
+  border: 1px dashed var(--chip-border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.caseStudyBlock p {
+  margin: 8px 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.caseStudyBlock strong {
+  color: var(--text);
+}
+
 .projectCard ul,
 .achievementList,
 .contactList {
@@ -543,6 +596,17 @@
 
 .contactCard p {
   color: var(--muted);
+}
+
+.recruiterActions {
+  margin: 16px 0 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.recruiterActions a {
+  text-align: center;
 }
 
 .contactList a {
@@ -670,6 +734,8 @@
   .projectGrid,
   .skillGroupGrid,
   .eduTimeline,
+  .impactGrid,
+  .recruiterActions,
   .heroSection {
     grid-template-columns: 1fr;
   }

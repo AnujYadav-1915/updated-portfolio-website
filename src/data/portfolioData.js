@@ -6,6 +6,7 @@ export const portfolioData = {
     'Passionate and results-driven developer with strong foundations in computer science and hands-on experience building production-grade apps. Focused on scalable architecture, clean code, and impactful user experiences.',
   links: {
     email: 'mailto:anujyadav11112003@gmail.com',
+    calendar: 'https://calendly.com/anujyadav11112003/30min',
     linkedin: 'https://www.linkedin.com/in/anuj-kumar-918415295/',
     github: 'https://github.com/AnujYadav-1915',
     leetcode: 'https://leetcode.com/u/AnujxPhoenix/',
@@ -27,6 +28,11 @@ export const portfolioData = {
       stack: ['Node.js', 'Express', 'Socket.IO', 'Monaco Editor'],
       demoLink: 'https://realtime-collaborative-code-editor-master.onrender.com/',
       repoLink: 'https://github.com/AnujYadav-1915/Realtime-Collaborative-Code-Editor-master',
+      caseStudy: {
+        problem: 'Teams needed synchronized code editing with low-latency updates and conflict-safe collaboration.',
+        architecture: 'Express + Socket.IO event pipeline with room-based sessions and Monaco in-browser editing.',
+        result: 'Delivered real-time multi-user editing with instant propagation and production-ready share flow.',
+      },
       points: [
         'Built collaborative editing where multiple users can edit code simultaneously with real-time synchronization.',
         'Implemented WebSocket broadcasting for instant shared updates across connected clients.',
@@ -38,6 +44,11 @@ export const portfolioData = {
       stack: ['Next.js', 'React', 'Clerk', 'Inngest', 'Neon PostgreSQL', 'Tailwind CSS'],
       demoLink: 'https://ai-career-coach-agent-five.vercel.app/',
       repoLink: 'https://github.com/AnujYadav-1915/Learnmate',
+      caseStudy: {
+        problem: 'Users needed guided career planning with actionable recommendations, not generic AI responses.',
+        architecture: 'Next.js app with Clerk auth, Inngest async AI workflows, and Neon PostgreSQL persistence.',
+        result: 'Shipped personalized roadmaps, resume feedback, and interview simulation in one integrated product.',
+      },
       points: [
         'Developed an AI-powered career guidance platform for resume analysis, skill-gap detection, and personalized roadmaps.',
         'Built mock technical and behavioral interview flows with an LLM-based interview agent.',

@@ -17,8 +17,27 @@ const heroStats = [
   { value: '7+', label: 'AWS Certifications' },
 ];
 
+const featuredImpact = [
+  {
+    metric: 'Real-time Systems',
+    headline: 'Low-latency collaborative apps',
+    proof: 'Built socket-driven products with instant state sync and production-ready event flows.',
+  },
+  {
+    metric: 'AI Product Engineering',
+    headline: 'From model to user value',
+    proof: 'Designed practical AI workflows for resume scoring, interview simulation, and skill-gap guidance.',
+  },
+  {
+    metric: 'Cloud & Delivery',
+    headline: 'Deployment-first mindset',
+    proof: 'Shipped projects to live environments with clean APIs, auth, and scalable architecture patterns.',
+  },
+];
+
 const sectionItems = [
   { id: 'home', label: 'Home' },
+  { id: 'impact', label: 'Impact' },
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'education', label: 'Education' },
@@ -108,7 +127,7 @@ const PortfolioPage = ({ theme }) => {
       </section>
 
       <section id="skills" data-section-id="skills" className="portfolioSection scrollReveal">
-        <h2><span>01</span> Skills Summary</h2>
+        <h2><span>02</span> Skills Summary</h2>
         <div className="skillGroupGrid">
           {skillGroups.map((group) => (
             <article className="skillGroupCard" key={group.key}>
@@ -123,10 +142,23 @@ const PortfolioPage = ({ theme }) => {
         </div>
       </section>
 
+      <section id="impact" data-section-id="impact" className="portfolioSection scrollReveal">
+        <h2><span>01</span> Featured Impact</h2>
+        <div className="impactGrid">
+          {featuredImpact.map((item) => (
+            <article className="impactCard" key={item.metric}>
+              <p className="impactMetric">{item.metric}</p>
+              <h3>{item.headline}</h3>
+              <p>{item.proof}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="projects" data-section-id="projects" className="portfolioSection scrollReveal">
-        <h2><span>02</span> Featured Projects</h2>
+        <h2><span>03</span> Featured Projects</h2>
         <div className="projectGrid">
-          {portfolioData.projects.map((project) => (
+          {portfolioData.projects.map((project, index) => (
             <article className="projectCard" key={project.title}>
               <div className="projectHead">
                 <h3>{project.title}</h3>
@@ -137,6 +169,13 @@ const PortfolioPage = ({ theme }) => {
               </div>
               <p className="projectLabel">Case Study</p>
               <p className="stackRow">{project.stack.join(' • ')}</p>
+              {index < 2 && project.caseStudy && (
+                <div className="caseStudyBlock">
+                  <p><strong>Problem:</strong> {project.caseStudy.problem}</p>
+                  <p><strong>Architecture:</strong> {project.caseStudy.architecture}</p>
+                  <p><strong>Result:</strong> {project.caseStudy.result}</p>
+                </div>
+              )}
               <ul>
                 {project.points.map((point) => (
                   <li key={point}>{point}</li>
@@ -148,7 +187,7 @@ const PortfolioPage = ({ theme }) => {
       </section>
 
       <section id="education" data-section-id="education" className="portfolioSection scrollReveal">
-        <h2><span>03</span> Education</h2>
+        <h2><span>04</span> Education</h2>
         <div className="eduTimeline">
           {portfolioData.education.map((item) => (
             <article className="eduCard" key={item.institute + item.duration}>
@@ -163,7 +202,7 @@ const PortfolioPage = ({ theme }) => {
       </section>
 
       <section id="achievements" data-section-id="achievements" className="portfolioSection scrollReveal">
-        <h2><span>04</span> Achievements</h2>
+        <h2><span>05</span> Achievements</h2>
         <ul className="achievementList">
           {portfolioData.achievements.map((item) => (
             <li key={item}>{item}</li>
@@ -173,8 +212,13 @@ const PortfolioPage = ({ theme }) => {
 
       <section id="contact" data-section-id="contact" className="portfolioSection scrollReveal contactSection">
         <div className="contactCard">
-          <h2><span>05</span> Let&apos;s Connect</h2>
+          <h2><span>06</span> Let&apos;s Connect</h2>
           <p>Reach out for internships, full-time roles, collaborations, and product discussions.</p>
+          <div className="recruiterActions">
+            <a className="btnPrimary" href={portfolioData.links.resume} target="_blank" rel="noreferrer">View Resume</a>
+            <a className="btnOutline" href={portfolioData.links.calendar} target="_blank" rel="noreferrer">Book Intro Call</a>
+            <a className="btnGhost" href={`${portfolioData.links.email}?subject=Interview%20Discussion%20-%20Anuj%20Kumar`}>Email for Opportunity</a>
+          </div>
           <ul className="contactList">
             <li><a href={portfolioData.links.email}>Email</a></li>
             <li><a href={portfolioData.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></li>
