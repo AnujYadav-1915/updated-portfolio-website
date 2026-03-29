@@ -1,0 +1,714 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+.appShell {
+  min-height: 100vh;
+  --bg: #08090d;
+  --surface: rgba(21, 24, 34, 0.82);
+  --surface-strong: #141827;
+  --text: #f2f5ff;
+  --muted: #adb4cf;
+  --accent: #7f8cff;
+  --accent-2: #2de2e6;
+  --chip: rgba(255, 255, 255, 0.07);
+  --chip-border: rgba(255, 255, 255, 0.16);
+  color: var(--text);
+  background: var(--bg);
+}
+
+.appShell.aurora-minimal {
+  --bg: #f8fbff;
+  --surface: rgba(255, 255, 255, 0.74);
+  --surface-strong: #eef3ff;
+  --text: #0f1c34;
+  --muted: #4b5873;
+  --accent: #6f54ff;
+  --accent-2: #00a8c8;
+  --chip: rgba(124, 77, 255, 0.08);
+  --chip-border: rgba(45, 63, 104, 0.22);
+}
+
+.appShell.cyber-motion {
+  --bg: #030507;
+  --surface: rgba(7, 10, 12, 0.9);
+  --surface-strong: #0b0f12;
+  --text: #d8ecff;
+  --muted: #8fb1c7;
+  --accent: #00ffa6;
+  --accent-2: #00d4ff;
+  --chip: rgba(0, 255, 166, 0.08);
+  --chip-border: rgba(0, 212, 255, 0.28);
+}
+
+.themeDock {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--chip-border);
+  background: color-mix(in srgb, var(--surface), black 12%);
+  backdrop-filter: blur(12px);
+}
+
+.themeDockHeader p {
+  margin: 0;
+  font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.themeDockHeader h2 {
+  margin: 4px 0 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.04rem;
+  font-weight: 700;
+}
+
+.themeButtonRow {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.themeBtn {
+  border: 1px solid var(--chip-border);
+  background: var(--chip);
+  color: inherit;
+  border-radius: 6px;
+  text-align: left;
+  padding: 11px;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.themeBtn span {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.themeBtn small {
+  display: block;
+  margin-top: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  opacity: 0.85;
+}
+
+.themeBtn:hover,
+.themeBtn.active {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--chip), white 6%);
+}
+
+.appShell.cyber-motion .themeDock {
+  background:
+    linear-gradient(0deg, rgba(0, 212, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.08) 1px, transparent 1px),
+    color-mix(in srgb, var(--surface), black 8%);
+  background-size: 24px 24px, 24px 24px, auto;
+  border-bottom-color: rgba(0, 255, 166, 0.36);
+}
+
+.appShell.cyber-motion .themeBtn,
+.appShell.cyber-motion .themeDock {
+  border-radius: 0;
+}
+
+.appShell.cyber-motion .themeBtn.active,
+.appShell.cyber-motion .themeBtn:hover {
+  box-shadow: inset 0 0 0 1px rgba(0, 255, 166, 0.45), 0 0 22px rgba(0, 212, 255, 0.18);
+}
+
+.portfolioPage {
+  position: relative;
+  overflow: hidden;
+  color: var(--text);
+  background: radial-gradient(circle at 10% 15%, rgba(127, 140, 255, 0.28), transparent 36%),
+    radial-gradient(circle at 90% 20%, rgba(45, 226, 230, 0.2), transparent 34%),
+    var(--bg);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.ambientFx {
+  position: absolute;
+  inset: -18% -24% auto;
+  height: 440px;
+  background:
+    radial-gradient(circle at 24% 40%, rgba(127, 140, 255, 0.28) 0, transparent 55%),
+    radial-gradient(circle at 75% 45%, rgba(45, 226, 230, 0.2) 0, transparent 52%);
+  filter: blur(24px);
+  animation: drift 14s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.portfolioSection {
+  position: relative;
+  z-index: 2;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+
+.scrollReveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.scrollReveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionRail {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 88;
+  display: grid;
+  gap: 8px;
+}
+
+.sectionRail a {
+  min-width: 98px;
+  border: 1px solid var(--chip-border);
+  background: color-mix(in srgb, var(--surface), black 12%);
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 170ms ease, color 170ms ease, transform 170ms ease;
+}
+
+.sectionRail a.active,
+.sectionRail a:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateX(4px);
+}
+
+.heroSection {
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 22px;
+  align-items: end;
+}
+
+.terminalLine {
+  margin: 0 0 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--chip-border);
+  background: rgba(0, 0, 0, 0.25);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
+  color: var(--accent-2);
+  letter-spacing: 0.02em;
+}
+
+.terminalLine span {
+  margin-right: 8px;
+  color: var(--accent);
+}
+
+.heroBadge {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 7px 12px;
+  border: 1px solid color-mix(in srgb, var(--accent), white 45%);
+  background: color-mix(in srgb, var(--accent), transparent 85%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heroText h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.heroText h1 span {
+  display: block;
+  margin-top: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(1rem, 2.2vw, 1.45rem);
+  color: var(--accent-2);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.heroText p {
+  margin: 16px 0 0;
+  font-size: 1.02rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.summaryText {
+  max-width: 680px;
+}
+
+.heroMeta {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.heroMeta span {
+  padding: 6px 10px;
+  border: 1px solid var(--chip-border);
+  background: var(--chip);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.heroActions {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btnPrimary,
+.btnOutline,
+.btnGhost {
+  text-decoration: none;
+  padding: 11px 15px;
+  border: 1px solid var(--chip-border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 170ms ease, box-shadow 170ms ease, border-color 170ms ease, background 170ms ease;
+}
+
+.btnPrimary {
+  background: linear-gradient(130deg, var(--accent), var(--accent-2));
+  color: #02120d;
+  border-color: transparent;
+}
+
+.btnOutline {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.btnGhost {
+  color: var(--muted);
+  border-style: dashed;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.btnPrimary:hover,
+.btnOutline:hover,
+.btnGhost:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+  border-color: var(--accent);
+}
+
+.heroStats {
+  display: grid;
+  gap: 10px;
+}
+
+.heroStats article,
+.skillGroupCard,
+.projectCard,
+.eduCard,
+.contactCard,
+.achievementList {
+  border: 1px solid var(--chip-border);
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+}
+
+.heroStats article {
+  padding: 18px;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.heroStats article:hover {
+  transform: translateX(4px);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent), transparent 58%);
+}
+
+.heroStats h3 {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+
+.heroStats p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.signalStrip {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 28px;
+  padding: 6px 10px;
+  border: 1px solid var(--chip-border);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.signalStrip span {
+  flex: 1;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.signalStrip span:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.signalStrip span:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+.signalStrip span:nth-child(4) {
+  animation-delay: 360ms;
+}
+
+.signalStrip span:nth-child(5) {
+  animation-delay: 480ms;
+}
+
+.portfolioSection h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.45rem, 3.1vw, 2.4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.portfolioSection h2 span {
+  margin-right: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66em;
+  color: var(--accent);
+}
+
+.skillGroupGrid,
+.projectGrid,
+.eduTimeline {
+  display: grid;
+  gap: 12px;
+}
+
+.skillGroupGrid,
+.eduTimeline {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.projectGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.skillGroupCard,
+.eduCard,
+.projectCard {
+  padding: 18px;
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.skillGroupCard:hover,
+.eduCard:hover,
+.projectCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent), transparent 58%);
+}
+
+.skillGroupCard h3,
+.projectCard h3,
+.eduCard h3 {
+  margin: 0;
+  font-size: 1.04rem;
+  text-transform: uppercase;
+}
+
+.eduCard h4,
+.skillGroupCard h4 {
+  margin: 6px 0 4px;
+  color: var(--accent-2);
+}
+
+.chipWrap {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 6px 10px;
+  border: 1px solid var(--chip-border);
+  background: var(--chip);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.73rem;
+  letter-spacing: 0.03em;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.chip:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent), transparent 65%);
+}
+
+.projectHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.projectActions {
+  display: flex;
+  gap: 8px;
+}
+
+.projectActions a {
+  color: var(--accent-2);
+  border: 1px solid currentColor;
+  padding: 5px 9px;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.projectLabel {
+  margin: 9px 0 0;
+  display: inline-flex;
+  padding: 4px 8px;
+  border: 1px solid var(--chip-border);
+  background: rgba(255, 255, 255, 0.03);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stackRow {
+  margin: 11px 0;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+}
+
+.projectCard ul,
+.achievementList,
+.contactList {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.projectCard li,
+.achievementList li,
+.contactList li {
+  margin: 7px 0;
+  color: var(--muted);
+  line-height: 1.56;
+}
+
+.achievementList {
+  padding: 16px 20px;
+}
+
+.contactCard {
+  padding: 22px;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--surface), black 12%), var(--surface-strong));
+}
+
+.contactCard p {
+  color: var(--muted);
+}
+
+.contactList a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.contactList a:hover {
+  color: var(--accent-2);
+  border-color: currentColor;
+}
+
+.portfolioPage.aurora-minimal {
+  --bg: #f8fbff;
+  --surface: rgba(255, 255, 255, 0.74);
+  --surface-strong: #eef3ff;
+  --text: #0f1c34;
+  --muted: #4b5873;
+  --accent: #6f54ff;
+  --accent-2: #00a8c8;
+  --chip: rgba(124, 77, 255, 0.08);
+  --chip-border: rgba(45, 63, 104, 0.22);
+  background: radial-gradient(circle at 20% 12%, rgba(124, 77, 255, 0.2), transparent 35%),
+    radial-gradient(circle at 92% 8%, rgba(0, 181, 216, 0.2), transparent 38%),
+    var(--bg);
+}
+
+.portfolioPage.cyber-motion {
+  --bg: #030507;
+  --surface: rgba(7, 10, 12, 0.9);
+  --surface-strong: #0b0f12;
+  --text: #d8ecff;
+  --muted: #8fb1c7;
+  --accent: #00ffa6;
+  --accent-2: #00d4ff;
+  --chip: rgba(0, 255, 166, 0.08);
+  --chip-border: rgba(0, 212, 255, 0.28);
+  background:
+    linear-gradient(0deg, rgba(0, 212, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.07) 1px, transparent 1px),
+    radial-gradient(circle at 12% 16%, rgba(0, 255, 166, 0.2), transparent 40%),
+    radial-gradient(circle at 82% 12%, rgba(0, 212, 255, 0.14), transparent 45%),
+    var(--bg);
+  background-size: 42px 42px, 42px 42px, auto, auto, auto;
+}
+
+.portfolioPage.cyber-motion::before,
+.portfolioPage.cyber-motion::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.portfolioPage.cyber-motion::before {
+  background: linear-gradient(rgba(255, 255, 255, 0.04) 50%, transparent 50%);
+  background-size: 100% 3px;
+  mix-blend-mode: soft-light;
+  opacity: 0.2;
+}
+
+.portfolioPage.cyber-motion::after {
+  border: 1px solid rgba(0, 255, 166, 0.2);
+  box-shadow: inset 0 0 35px rgba(0, 255, 166, 0.08);
+}
+
+.portfolioPage.cyber-motion .themeDock,
+.portfolioPage.cyber-motion .themeBtn,
+.portfolioPage.cyber-motion .heroBadge,
+.portfolioPage.cyber-motion .btnPrimary,
+.portfolioPage.cyber-motion .btnOutline,
+.portfolioPage.cyber-motion .btnGhost,
+.portfolioPage.cyber-motion .heroStats article,
+.portfolioPage.cyber-motion .signalStrip,
+.portfolioPage.cyber-motion .skillGroupCard,
+.portfolioPage.cyber-motion .projectCard,
+.portfolioPage.cyber-motion .eduCard,
+.portfolioPage.cyber-motion .achievementList,
+.portfolioPage.cyber-motion .contactCard,
+.portfolioPage.cyber-motion .chip,
+.portfolioPage.cyber-motion .projectActions a,
+.portfolioPage.cyber-motion .projectLabel,
+.portfolioPage.cyber-motion .heroMeta span,
+.portfolioPage.cyber-motion .terminalLine,
+.portfolioPage.cyber-motion .sectionRail a {
+  border-radius: 0;
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(-22px, -10px, 0) scale(1);
+  }
+  to {
+    transform: translate3d(14px, 8px, 0) scale(1.12);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 980px) {
+  .themeButtonRow,
+  .projectGrid,
+  .skillGroupGrid,
+  .eduTimeline,
+  .heroSection {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolioSection {
+    padding: 54px 16px;
+  }
+
+  .heroText h1 {
+    font-size: clamp(1.9rem, 9vw, 2.8rem);
+  }
+
+  .heroActions {
+    gap: 8px;
+  }
+
+  .btnPrimary,
+  .btnOutline,
+  .btnGhost {
+    width: 100%;
+    text-align: center;
+  }
+
+  .projectActions {
+    width: 100%;
+  }
+
+  .projectActions a {
+    flex: 1;
+    text-align: center;
+  }
+
+  .sectionRail {
+    display: none;
+  }
+}
+
+@media (max-width: 1240px) {
+  .sectionRail {
+    display: none;
+  }
+}
