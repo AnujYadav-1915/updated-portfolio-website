@@ -411,14 +411,18 @@
 .skillGroupGrid,
 .projectGrid,
 .eduTimeline,
-.impactGrid {
+.impactGrid,
+.nowGrid,
+.proofGrid {
   display: grid;
   gap: 12px;
 }
 
 .skillGroupGrid,
 .eduTimeline,
-.impactGrid {
+.impactGrid,
+.nowGrid,
+.proofGrid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -465,6 +469,70 @@
   margin: 10px 0 0;
   color: var(--muted);
   line-height: 1.56;
+}
+
+.nowCard,
+.proofCard {
+  padding: 18px;
+  border: 1px solid var(--chip-border);
+  background: var(--surface);
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.nowCard:hover,
+.proofCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent), transparent 58%);
+}
+
+.nowTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.nowTopRow h3,
+.proofCard h3 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.statusPill {
+  padding: 4px 8px;
+  border: 1px solid var(--chip-border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+.nowCard p,
+.proofCard p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.54;
+}
+
+.timelineTag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.proofCard h3 a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.proofCard h3 a:hover {
+  border-bottom-color: var(--accent-2);
+  color: var(--accent-2);
 }
 
 .skillGroupCard:hover,
@@ -568,6 +636,16 @@
 
 .caseStudyBlock strong {
   color: var(--text);
+}
+
+.snapshotList {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.snapshotList li {
+  margin: 6px 0;
+  color: var(--muted);
 }
 
 .projectCard ul,
@@ -735,6 +813,8 @@
   .skillGroupGrid,
   .eduTimeline,
   .impactGrid,
+  .nowGrid,
+  .proofGrid,
   .recruiterActions,
   .heroSection {
     grid-template-columns: 1fr;

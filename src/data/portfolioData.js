@@ -33,6 +33,11 @@ export const portfolioData = {
         architecture: 'Express + Socket.IO event pipeline with room-based sessions and Monaco in-browser editing.',
         result: 'Delivered real-time multi-user editing with instant propagation and production-ready share flow.',
       },
+      architectureSnapshot: [
+        'Room-based collaboration channels isolate each coding session securely.',
+        'Socket events are throttled and broadcast for low-latency multi-user sync.',
+        'Monaco editor state is mirrored across connected clients in real time.',
+      ],
       points: [
         'Built collaborative editing where multiple users can edit code simultaneously with real-time synchronization.',
         'Implemented WebSocket broadcasting for instant shared updates across connected clients.',
@@ -49,6 +54,11 @@ export const portfolioData = {
         architecture: 'Next.js app with Clerk auth, Inngest async AI workflows, and Neon PostgreSQL persistence.',
         result: 'Shipped personalized roadmaps, resume feedback, and interview simulation in one integrated product.',
       },
+      architectureSnapshot: [
+        'Clerk authentication protects user data and scoped dashboard content.',
+        'Inngest executes async AI pipelines for reliable resume and roadmap generation.',
+        'Neon PostgreSQL stores user progress, interview history, and recommendation states.',
+      ],
       points: [
         'Developed an AI-powered career guidance platform for resume analysis, skill-gap detection, and personalized roadmaps.',
         'Built mock technical and behavioral interview flows with an LLM-based interview agent.',
@@ -87,6 +97,26 @@ export const portfolioData = {
     'AWS Certifications: AI Practitioner, Cloud Practitioner, Data Engineer, Developer Associate, Machine Learning, SysOps Administrator, DevOps Engineer.',
     'JavaScript Data Structures & Algorithms certification completed.',
     'Solved 1000+ DSA problems across LeetCode, CodeChef, GeeksforGeeks, and Coding Ninjas.',
+  ],
+  nowBuilding: [
+    {
+      title: 'AI Interview Copilot Flows',
+      status: 'In Progress',
+      details: 'Improving adaptive follow-up questioning and feedback loops for mock interviews.',
+      timeline: 'Current Focus',
+    },
+    {
+      title: 'Scalable Realtime Backend Patterns',
+      status: 'R&D',
+      details: 'Experimenting with socket event partitioning and resilience patterns under high concurrency.',
+      timeline: 'This Quarter',
+    },
+    {
+      title: 'Portfolio Case Study Expansion',
+      status: 'Planned',
+      details: 'Publishing deeper architecture and decision notes for flagship projects.',
+      timeline: 'Next Milestone',
+    },
   ],
 };
 

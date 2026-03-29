@@ -38,11 +38,21 @@ const featuredImpact = [
 const sectionItems = [
   { id: 'home', label: 'Home' },
   { id: 'impact', label: 'Impact' },
+  { id: 'now-building', label: 'Now' },
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
+  { id: 'proof', label: 'Proof' },
   { id: 'education', label: 'Education' },
   { id: 'achievements', label: 'Wins' },
   { id: 'contact', label: 'Contact' },
+];
+
+const proofOfWork = (links) => [
+  { label: 'GitHub Profile', href: links.github, blurb: 'Source code, commits, and repository activity.' },
+  { label: 'LeetCode Profile', href: links.leetcode, blurb: 'Algorithm practice consistency and problem-solving depth.' },
+  { label: 'CodeChef Profile', href: links.codechef, blurb: 'Competitive coding performance and ranking history.' },
+  { label: 'LinkedIn Profile', href: links.linkedin, blurb: 'Professional timeline, certifications, and network.' },
+  { label: 'Resume PDF', href: links.resume, blurb: 'One-page technical snapshot for quick recruiter review.' },
 ];
 
 const PortfolioPage = ({ theme }) => {
@@ -126,8 +136,37 @@ const PortfolioPage = ({ theme }) => {
         </div>
       </section>
 
+      <section id="impact" data-section-id="impact" className="portfolioSection scrollReveal">
+        <h2><span>01</span> Featured Impact</h2>
+        <div className="impactGrid">
+          {featuredImpact.map((item) => (
+            <article className="impactCard" key={item.metric}>
+              <p className="impactMetric">{item.metric}</p>
+              <h3>{item.headline}</h3>
+              <p>{item.proof}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="now-building" data-section-id="now-building" className="portfolioSection scrollReveal">
+        <h2><span>02</span> Now Building</h2>
+        <div className="nowGrid">
+          {portfolioData.nowBuilding.map((item) => (
+            <article className="nowCard" key={item.title}>
+              <div className="nowTopRow">
+                <h3>{item.title}</h3>
+                <span className="statusPill">{item.status}</span>
+              </div>
+              <p>{item.details}</p>
+              <p className="timelineTag">{item.timeline}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="skills" data-section-id="skills" className="portfolioSection scrollReveal">
-        <h2><span>02</span> Skills Summary</h2>
+        <h2><span>03</span> Skills Summary</h2>
         <div className="skillGroupGrid">
           {skillGroups.map((group) => (
             <article className="skillGroupCard" key={group.key}>
@@ -142,21 +181,8 @@ const PortfolioPage = ({ theme }) => {
         </div>
       </section>
 
-      <section id="impact" data-section-id="impact" className="portfolioSection scrollReveal">
-        <h2><span>01</span> Featured Impact</h2>
-        <div className="impactGrid">
-          {featuredImpact.map((item) => (
-            <article className="impactCard" key={item.metric}>
-              <p className="impactMetric">{item.metric}</p>
-              <h3>{item.headline}</h3>
-              <p>{item.proof}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section id="projects" data-section-id="projects" className="portfolioSection scrollReveal">
-        <h2><span>03</span> Featured Projects</h2>
+        <h2><span>04</span> Featured Projects</h2>
         <div className="projectGrid">
           {portfolioData.projects.map((project, index) => (
             <article className="projectCard" key={project.title}>
@@ -174,6 +200,13 @@ const PortfolioPage = ({ theme }) => {
                   <p><strong>Problem:</strong> {project.caseStudy.problem}</p>
                   <p><strong>Architecture:</strong> {project.caseStudy.architecture}</p>
                   <p><strong>Result:</strong> {project.caseStudy.result}</p>
+                    {project.architectureSnapshot && (
+                      <ul className="snapshotList">
+                        {project.architectureSnapshot.map((line) => (
+                          <li key={line}>{line}</li>
+                        ))}
+                      </ul>
+                    )}
                 </div>
               )}
               <ul>
@@ -186,8 +219,20 @@ const PortfolioPage = ({ theme }) => {
         </div>
       </section>
 
+      <section id="proof" data-section-id="proof" className="portfolioSection scrollReveal">
+        <h2><span>05</span> Proof of Work</h2>
+        <div className="proofGrid">
+          {proofOfWork(portfolioData.links).map((item) => (
+            <article className="proofCard" key={item.label}>
+              <h3><a href={item.href} target="_blank" rel="noreferrer">{item.label}</a></h3>
+              <p>{item.blurb}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="education" data-section-id="education" className="portfolioSection scrollReveal">
-        <h2><span>04</span> Education</h2>
+        <h2><span>06</span> Education</h2>
         <div className="eduTimeline">
           {portfolioData.education.map((item) => (
             <article className="eduCard" key={item.institute + item.duration}>
@@ -202,7 +247,7 @@ const PortfolioPage = ({ theme }) => {
       </section>
 
       <section id="achievements" data-section-id="achievements" className="portfolioSection scrollReveal">
-        <h2><span>05</span> Achievements</h2>
+        <h2><span>07</span> Achievements</h2>
         <ul className="achievementList">
           {portfolioData.achievements.map((item) => (
             <li key={item}>{item}</li>
@@ -212,7 +257,7 @@ const PortfolioPage = ({ theme }) => {
 
       <section id="contact" data-section-id="contact" className="portfolioSection scrollReveal contactSection">
         <div className="contactCard">
-          <h2><span>06</span> Let&apos;s Connect</h2>
+          <h2><span>08</span> Let&apos;s Connect</h2>
           <p>Reach out for internships, full-time roles, collaborations, and product discussions.</p>
           <div className="recruiterActions">
             <a className="btnPrimary" href={portfolioData.links.resume} target="_blank" rel="noreferrer">View Resume</a>
