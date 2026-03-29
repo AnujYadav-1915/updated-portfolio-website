@@ -10,7 +10,7 @@ export const portfolioData = {
     github: 'https://github.com/AnujYadav-1915',
     leetcode: 'https://leetcode.com/u/AnujxPhoenix/',
     codechef: 'https://www.codechef.com/users/clean_array_61',
-    portfolio: 'https://anuj-kumar-dev-p672hq1.gamma.site',
+    portfolio: 'https://anujyadav-1915.github.io/updated-portfolio-website/',
     resume: '/AnujKumarResume.pdf',
   },
   skills: {
