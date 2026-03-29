@@ -216,7 +216,7 @@ const PortfolioPage = ({ theme }) => {
           <p>Reach out for internships, full-time roles, collaborations, and product discussions.</p>
           <div className="recruiterActions">
             <a className="btnPrimary" href={portfolioData.links.resume} target="_blank" rel="noreferrer">View Resume</a>
-            <a className="btnOutline" href={portfolioData.links.calendar} target="_blank" rel="noreferrer">Book Intro Call</a>
+              <a className="btnOutline" href={portfolioData.links.calendar} target="_blank" rel="noreferrer">Schedule with Calendly</a>
             <a className="btnGhost" href={`${portfolioData.links.email}?subject=Interview%20Discussion%20-%20Anuj%20Kumar`}>Email for Opportunity</a>
           </div>
           <ul className="contactList">
