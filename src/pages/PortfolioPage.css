@@ -154,6 +154,30 @@
   padding: 72px 24px;
 }
 
+.recruiterModeToggle {
+  position: fixed;
+  right: 20px;
+  top: 16px;
+  z-index: 95;
+  border: 1px solid var(--chip-border);
+  background: color-mix(in srgb, var(--surface), black 14%);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 11px;
+  cursor: pointer;
+  transition: border-color 170ms ease, box-shadow 170ms ease, transform 170ms ease;
+}
+
+.recruiterModeToggle:hover,
+.recruiterModeToggle.active {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent), transparent 58%);
+}
+
 .scrollReveal {
   opacity: 0;
   transform: translateY(22px);
@@ -469,6 +493,39 @@
   margin: 10px 0 0;
   color: var(--muted);
   line-height: 1.56;
+}
+
+.snapshotQuickGrid,
+.recruiterProjectList {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.recruiterProjectList {
+  margin-top: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.snapshotQuickCard,
+.recruiterProjectItem {
+  padding: 16px;
+  border: 1px solid var(--chip-border);
+  background: var(--surface);
+}
+
+.snapshotQuickCard h3,
+.recruiterProjectItem h3 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 0.96rem;
+}
+
+.snapshotQuickCard p,
+.recruiterProjectItem p {
+  margin: 9px 0 0;
+  color: var(--muted);
+  line-height: 1.54;
 }
 
 .nowCard,
@@ -815,9 +872,18 @@
   .impactGrid,
   .nowGrid,
   .proofGrid,
+  .snapshotQuickGrid,
+  .recruiterProjectList,
   .recruiterActions,
   .heroSection {
     grid-template-columns: 1fr;
+  }
+
+  .recruiterModeToggle {
+    position: static;
+    margin: 14px 16px 0;
+    width: calc(100% - 32px);
+    text-align: center;
   }
 
   .portfolioSection {
