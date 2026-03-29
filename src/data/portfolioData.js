@@ -6,7 +6,7 @@ export const portfolioData = {
     'Passionate and results-driven developer with strong foundations in computer science and hands-on experience building production-grade apps. Focused on scalable architecture, clean code, and impactful user experiences.',
   links: {
     email: 'mailto:anujyadav11112003@gmail.com',
-    calendar: 'https://calendly.com/anujyadav11112003/30min',
+    calendar: 'https://calendly.com/anujyadav11112003',
     linkedin: 'https://www.linkedin.com/in/anuj-kumar-918415295/',
     github: 'https://github.com/AnujYadav-1915',
     leetcode: 'https://leetcode.com/u/AnujxPhoenix/',
