@@ -181,7 +181,7 @@ const PortfolioPage = ({ theme }) => {
             <li><a href={portfolioData.links.github} target="_blank" rel="noreferrer">GitHub</a></li>
             <li><a href={portfolioData.links.leetcode} target="_blank" rel="noreferrer">LeetCode</a></li>
             <li><a href={portfolioData.links.codechef} target="_blank" rel="noreferrer">CodeChef</a></li>
-            <li><a href={portfolioData.links.portfolio} target="_blank" rel="noreferrer">Personal Portfolio</a></li>
+            <li><a href={portfolioData.links.portfolio} target="_blank" rel="noreferrer">Current Portfolio (Live)</a></li>
           </ul>
         </div>
       </section>
