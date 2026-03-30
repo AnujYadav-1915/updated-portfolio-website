@@ -53,6 +53,22 @@ const recruiterSectionItems = [
   { id: 'contact', label: 'Contact' },
 ];
 
+const mobileSectionItems = [
+  { id: 'home', label: 'Home' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'proof', label: 'Proof' },
+  { id: 'contact', label: 'Contact' },
+];
+
+const skillTokenMap = {
+  'React.js': '⚛', 'Next.js': 'NX', 'Node.js': '⬡', 'Express.js': 'EX',
+  'Socket.IO': '⚡', 'Python': 'PY', 'TypeScript': 'TS', 'JavaScript': 'JS',
+  'MongoDB': 'MG', 'PostgreSQL': 'PG', 'Docker': '🐳', 'AWS': '☁',
+  'Redux': 'RX', 'Tailwind CSS': 'TW', 'MySQL': 'MY',
+};
+
+const getSkillToken = (skill) => skillTokenMap[skill] || skill.slice(0, 2).toUpperCase();
+
 const proofOfWork = (links) => [
   { label: 'GitHub Profile', href: links.github, blurb: 'Source code, commits, and repository activity.' },
   { label: 'LeetCode Profile', href: links.leetcode, blurb: 'Algorithm practice consistency and problem-solving depth.' },
@@ -104,6 +120,7 @@ const PortfolioPage = ({ theme }) => {
             key={section.id}
             href={`#${section.id}`}
             className={activeSection === section.id ? 'active' : ''}
+            onClick={() => setActiveSection(section.id)}
           >
             <span>{section.label}</span>
           </a>
@@ -127,10 +144,15 @@ const PortfolioPage = ({ theme }) => {
             <span>Focus: AI x Full-Stack</span>
             <span>Availability: Immediate</span>
           </div>
+          <div className="heroTrustStrip">
+            <span className="trustBadge">✓ Available Immediately</span>
+            <span className="trustBadge">✓ Response within 24h</span>
+            <span className="trustBadge">✓ Open to Relocation</span>
+          </div>
           <div className="heroActions">
             <a className="btnPrimary" href={portfolioData.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
             <a className="btnOutline" href={portfolioData.links.github} target="_blank" rel="noreferrer">GitHub</a>
-            <a className="btnGhost" href="#projects">Projects</a>
+            <a className="btnGhost" href="#projects" onClick={() => setActiveSection('projects')}>Projects</a>
           </div>
         </div>
         <div className="heroStats">
@@ -221,7 +243,10 @@ const PortfolioPage = ({ theme }) => {
                     <h3>{group.title}</h3>
                     <div className="chipWrap">
                       {portfolioData.skills[group.key].map((item) => (
-                        <span className="chip" key={item}>{item}</span>
+                        <span className="chip" key={item}>
+                          <span className="chipToken">{getSkillToken(item)}</span>
+                          {item}
+                        </span>
                       ))}
                     </div>
                   </article>
@@ -234,6 +259,24 @@ const PortfolioPage = ({ theme }) => {
               <div className="projectGrid">
                 {portfolioData.projects.map((project, index) => (
                   <article className="projectCard" key={project.title}>
+                    {project.tone && (
+                      <div className={`projectVisual tone-${project.tone}`}>
+                        <div className="projectVisualTop">
+                          <span className="projectEyebrow">{project.coverEyebrow}</span>
+                          <div className="projectSignalBars" aria-hidden="true">
+                            <span /><span /><span /><span />
+                          </div>
+                        </div>
+                        <p className="projectMetricHeadline">{project.metricHeadline}</p>
+                        {project.metrics && (
+                          <div className="projectMetricRow">
+                            {project.metrics.map((m) => (
+                              <span className="metricChip" key={m}>{m}</span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
                     <div className="projectHead">
                       <h3>{project.title}</h3>
                       <div className="projectActions">
@@ -243,7 +286,7 @@ const PortfolioPage = ({ theme }) => {
                     </div>
                     <p className="projectLabel">Case Study</p>
                     <p className="stackRow">{project.stack.join(' • ')}</p>
-                    {index < 2 && project.caseStudy && (
+                    {project.caseStudy && (
                       <div className="caseStudyBlock">
                         <p><strong>Problem:</strong> {project.caseStudy.problem}</p>
                         <p><strong>Architecture:</strong> {project.caseStudy.architecture}</p>
@@ -296,6 +339,14 @@ const PortfolioPage = ({ theme }) => {
 
             <section id="achievements" data-section-id="achievements" className="portfolioSection scrollReveal">
               <h2><span>07</span> Achievements</h2>
+              {portfolioData.certifications && (
+                <div className="certGrid">
+                  <p className="certEyebrow">AWS Certifications</p>
+                  {portfolioData.certifications.map((cert) => (
+                    <span className="certBadge" key={cert}>{cert}</span>
+                  ))}
+                </div>
+              )}
               <ul className="achievementList">
                 {portfolioData.achievements.map((item) => (
                   <li key={item}>{item}</li>
@@ -324,6 +375,18 @@ const PortfolioPage = ({ theme }) => {
           </ul>
         </div>
       </section>
+      <nav className="mobileDock" aria-label="Mobile navigation">
+        {mobileSectionItems.map((item) => (
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            className={activeSection === item.id ? 'active' : ''}
+            onClick={() => setActiveSection(item.id)}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
     </main>
   );
 };

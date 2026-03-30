@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 .appShell {
   min-height: 100vh;
   --bg: #08090d;
@@ -152,6 +156,7 @@
   max-width: 1140px;
   margin: 0 auto;
   padding: 72px 24px;
+  scroll-margin-top: 28px;
 }
 
 .recruiterModeToggle {
@@ -255,6 +260,35 @@
   text-transform: uppercase;
 }
 
+.heroBadgeRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.availabilityBeacon {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border: 1px solid color-mix(in srgb, var(--accent), transparent 50%);
+  background: color-mix(in srgb, var(--accent), transparent 90%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.availabilityDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: beaconPulse 2s ease-in-out infinite;
+}
+
 .heroText h1 {
   margin: 0;
   font-size: clamp(2.2rem, 5vw, 4.2rem);
@@ -299,6 +333,23 @@
   font-size: 0.7rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.heroTrustStrip {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.trustBadge {
+  padding: 5px 9px;
+  border: 1px solid color-mix(in srgb, var(--accent-2), transparent 55%);
+  background: color-mix(in srgb, var(--accent-2), transparent 92%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.04em;
+  color: var(--accent-2);
 }
 
 .heroActions {
@@ -636,11 +687,101 @@
   box-shadow: 0 0 12px color-mix(in srgb, var(--accent), transparent 65%);
 }
 
+.chipToken {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 18px;
+  padding: 0 4px;
+  margin-right: 5px;
+  border: 1px solid var(--chip-border);
+  background: color-mix(in srgb, var(--accent), transparent 88%);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--accent);
+  border-radius: 2px;
+}
+
 .projectHead {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 10px;
+}
+
+.projectVisual {
+  margin: -2px -2px 18px;
+  padding: 16px 18px 14px;
+  border-bottom: 1px solid var(--chip-border);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--pv-color, var(--accent)), transparent 90%), transparent 70%);
+}
+
+.projectVisual.tone-signal  { --pv-color: #00ffa6; }
+.projectVisual.tone-aurora  { --pv-color: #7f8cff; }
+.projectVisual.tone-ember   { --pv-color: #ff7b47; }
+
+.projectVisualTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.projectEyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.63rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--pv-color, var(--accent));
+  opacity: 0.9;
+}
+
+.projectSignalBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+}
+
+.projectSignalBars span {
+  display: block;
+  width: 3px;
+  background: var(--pv-color, var(--accent));
+  border-radius: 1px;
+  opacity: 0.7;
+  animation: signalBarPop 1.6s ease-in-out infinite;
+}
+
+.projectSignalBars span:nth-child(1) { height: 5px; animation-delay: 0s; }
+.projectSignalBars span:nth-child(2) { height: 9px; animation-delay: 0.2s; }
+.projectSignalBars span:nth-child(3) { height: 13px; animation-delay: 0.4s; }
+.projectSignalBars span:nth-child(4) { height: 8px; animation-delay: 0.6s; }
+
+.projectMetricHeadline {
+  margin: 0 0 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.projectMetricRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.metricChip {
+  padding: 4px 8px;
+  border: 1px solid color-mix(in srgb, var(--pv-color, var(--accent)), transparent 60%);
+  background: color-mix(in srgb, var(--pv-color, var(--accent)), transparent 92%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.63rem;
+  letter-spacing: 0.04em;
+  color: var(--pv-color, var(--accent));
 }
 
 .projectActions {
@@ -705,6 +846,37 @@
   color: var(--muted);
 }
 
+.certGrid {
+  margin-bottom: 20px;
+  padding: 16px 18px;
+  border: 1px solid var(--chip-border);
+  background: color-mix(in srgb, var(--surface), black 8%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.certEyebrow {
+  width: 100%;
+  margin: 0 0 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.63rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.certBadge {
+  padding: 5px 10px;
+  border: 1px solid color-mix(in srgb, var(--accent), transparent 55%);
+  background: color-mix(in srgb, var(--accent), transparent 91%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+}
+
 .projectCard ul,
 .achievementList,
 .contactList {
@@ -754,6 +926,10 @@
 .contactList a:hover {
   color: var(--accent-2);
   border-color: currentColor;
+}
+
+.mobileDock {
+  display: none;
 }
 
 .portfolioPage.aurora-minimal {
@@ -864,6 +1040,27 @@
   }
 }
 
+@keyframes beaconPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.75); }
+}
+
+@keyframes signalBarPop {
+  0%, 100% { opacity: 0.5; transform: scaleY(0.6); }
+  50%       { opacity: 1;   transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .availabilityDot,
+  .projectSignalBars span,
+  .signalStrip span {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 @media (max-width: 980px) {
   .themeButtonRow,
   .projectGrid,
@@ -875,6 +1072,7 @@
   .snapshotQuickGrid,
   .recruiterProjectList,
   .recruiterActions,
+  .certGrid,
   .heroSection {
     grid-template-columns: 1fr;
   }
@@ -922,5 +1120,41 @@
 @media (max-width: 1240px) {
   .sectionRail {
     display: none;
+  }
+
+  .mobileDock {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 80;
+    background: color-mix(in srgb, var(--surface), black 18%);
+    backdrop-filter: blur(14px);
+    border-top: 1px solid var(--chip-border);
+    padding: 10px 0;
+    justify-content: space-around;
+  }
+
+  .mobileDock a {
+    flex: 1;
+    text-align: center;
+    padding: 6px 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 160ms ease;
+  }
+
+  .mobileDock a.active,
+  .mobileDock a:hover {
+    color: var(--accent);
+  }
+
+  .portfolioPage {
+    padding-bottom: 92px;
   }
 }

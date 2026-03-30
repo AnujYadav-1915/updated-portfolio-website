@@ -14,6 +14,15 @@ export const portfolioData = {
     portfolio: 'https://anujyadav-1915.github.io/updated-portfolio-website/',
     resume: './AnujKumarResume.pdf',
   },
+  certifications: [
+    'AWS AI Practitioner',
+    'AWS Cloud Practitioner',
+    'AWS Data Engineer',
+    'AWS Developer Associate',
+    'AWS Machine Learning',
+    'AWS SysOps Administrator',
+    'AWS DevOps Engineer',
+  ],
   skills: {
     languages: ['C', 'Python', 'C++', 'JavaScript'],
     frontend: ['React.js', 'Redux', 'HTML', 'CSS', 'SCSS', 'Tailwind CSS', 'Bootstrap', 'TypeScript'],
@@ -25,6 +34,10 @@ export const portfolioData = {
   projects: [
     {
       title: 'Real-Time Collaborative Code Editor',
+      coverEyebrow: 'Realtime Infra',
+      metricHeadline: '<120ms sync feel',
+      tone: 'signal',
+      metrics: ['Low-latency socket sync', 'Room-based isolation', 'Live code collaboration'],
       stack: ['Node.js', 'Express', 'Socket.IO', 'Monaco Editor'],
       demoLink: 'https://realtime-collaborative-code-editor-master.onrender.com/',
       repoLink: 'https://github.com/AnujYadav-1915/Realtime-Collaborative-Code-Editor-master',
@@ -46,6 +59,10 @@ export const portfolioData = {
     },
     {
       title: 'LearnMate — AI Career Coach Agent',
+      coverEyebrow: 'AI Product',
+      metricHeadline: 'Async AI workflows',
+      tone: 'aurora',
+      metrics: ['Guided resume review', 'Interview simulation flows', 'Persistent user progress'],
       stack: ['Next.js', 'React', 'Clerk', 'Inngest', 'Neon PostgreSQL', 'Tailwind CSS'],
       demoLink: 'https://ai-career-coach-agent-five.vercel.app/',
       repoLink: 'https://github.com/AnujYadav-1915/Learnmate',
@@ -67,9 +84,23 @@ export const portfolioData = {
     },
     {
       title: 'Real-Time Chat Application',
+      coverEyebrow: 'Messaging System',
+      metricHeadline: 'Presence + typing states',
+      tone: 'ember',
+      metrics: ['Realtime delivery events', 'Typing + online presence', 'Authenticated messaging'],
       stack: ['React', 'Node.js', 'Express', 'Socket.IO', 'MongoDB'],
       demoLink: 'https://github.com/AnujYadav-1915?tab=repositories',
       repoLink: 'https://github.com/AnujYadav-1915?tab=repositories',
+      caseStudy: {
+        problem: 'Users needed a reliable real-time messaging experience with presence and typing indicators in a secure, stateful environment.',
+        architecture: 'React frontend + Node/Express backend with Socket.IO for event-driven messaging, JWT auth middleware, and MongoDB for message persistence.',
+        result: 'Delivered full private messaging with delivery receipts, typing indicators, online presence tracking, and authenticated user sessions.',
+      },
+      architectureSnapshot: [
+        'Socket.IO event pipeline handles message delivery, typing events, and online/offline presence in real time.',
+        'JWT-protected REST endpoints gate all conversation and user management operations.',
+        'MongoDB stores conversations and messages with indexed queries for fast retrieval.',
+      ],
       points: [
         'Built a real-time messaging app with private conversations, typing indicators, and presence states.',
         'Implemented JWT-based authentication and secure REST APIs for user, conversation, and message management.',
@@ -94,9 +125,9 @@ export const portfolioData = {
     },
   ],
   achievements: [
-    'AWS Certifications: AI Practitioner, Cloud Practitioner, Data Engineer, Developer Associate, Machine Learning, SysOps Administrator, DevOps Engineer.',
     'JavaScript Data Structures & Algorithms certification completed.',
     'Solved 1000+ DSA problems across LeetCode, CodeChef, GeeksforGeeks, and Coding Ninjas.',
+    'Built and deployed multiple production-facing portfolio projects with live demos and recruiter-ready case studies.',
   ],
   nowBuilding: [
     {
