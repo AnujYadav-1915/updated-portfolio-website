@@ -12,7 +12,7 @@ export const portfolioData = {
     leetcode: 'https://leetcode.com/u/AnujxPhoenix/',
     codechef: 'https://www.codechef.com/users/clean_array_61',
     portfolio: 'https://anujyadav-1915.github.io/updated-portfolio-website/',
-    resume: './Resume2026.pdf',
+    resume: './Anuj_Kumar_Resume.pdf',
   },
   certifications: [
     'AWS AI Practitioner',
