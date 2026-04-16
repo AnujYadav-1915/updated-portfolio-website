@@ -107,15 +107,8 @@ const PortfolioPage = ({ theme }) => {
   return (
     <main className={`portfolioPage ${theme}`}>
       <div className="ambientFx" aria-hidden="true" />
-      <button
-        type="button"
-        className={`recruiterModeToggle ${recruiterMode ? 'active' : ''}`}
-        onClick={() => setRecruiterMode((prev) => !prev)}
-      >
-        {recruiterMode ? 'Recruiter Mode: ON' : 'Recruiter Mode: OFF'}
-      </button>
       <nav className="sectionRail" aria-label="Section navigation">
-        {(recruiterMode ? recruiterSectionItems : sectionItems).map((section) => (
+        {sectionItems.map((section) => (
           <a
             key={section.id}
             href={`#${section.id}`}
@@ -172,40 +165,7 @@ const PortfolioPage = ({ theme }) => {
         </div>
       </section>
 
-        {recruiterMode ? (
-          <>
-            <section id="recruiter-snapshot" data-section-id="recruiter-snapshot" className="portfolioSection scrollReveal recruiterSection">
-              <h2><span>01</span> Recruiter Snapshot</h2>
-              <div className="snapshotQuickGrid">
-                <article className="snapshotQuickCard">
-                  <h3>Role Fit</h3>
-                  <p>Software Engineer focused on full-stack product development, AI workflows, and realtime systems.</p>
-                </article>
-                <article className="snapshotQuickCard">
-                  <h3>Top Stack</h3>
-                  <p>React, Node.js, Express, Socket.IO, PostgreSQL, MongoDB, Clerk, Inngest, Docker.</p>
-                </article>
-                <article className="snapshotQuickCard">
-                  <h3>Proof</h3>
-                  <p>1000+ DSA problems solved, 7+ AWS certifications, and multiple live end-to-end products.</p>
-                </article>
-              </div>
-              <div className="recruiterProjectList">
-                {portfolioData.projects.map((project) => (
-                  <article className="recruiterProjectItem" key={project.title}>
-                    <h3>{project.title}</h3>
-                    <p>{project.stack.join(' • ')}</p>
-                    <div className="projectActions">
-                      <a href={project.demoLink} target="_blank" rel="noreferrer">Live Demo</a>
-                      <a href={project.repoLink} target="_blank" rel="noreferrer">GitHub</a>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </section>
-          </>
-        ) : (
-          <>
+        <>
             <section id="impact" data-section-id="impact" className="portfolioSection scrollReveal">
               <h2><span>01</span> Featured Impact</h2>
               <div className="impactGrid">
