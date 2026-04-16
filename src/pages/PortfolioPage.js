@@ -9,8 +9,17 @@ const skillGroups = [
   { title: 'Databases', key: 'databases' },
   { title: 'Tools & Platforms', key: 'tools' },
   { title: 'Core CS', key: 'fundamentals' },
+  {
+    metric: 'AI Product Engineering',
+    headline: 'From model to user value',
+    proof: 'Designed practical AI workflows for resume scoring, interview simulation, and skill-gap guidance.',
+  },
+  {
+    metric: 'Cloud & Delivery',
+    headline: 'Deployment-first mindset',
+    proof: 'Shipped projects to live environments with clean APIs, auth, and scalable architecture patterns.',
+  },
 ];
-
 const heroStats = [
   { value: '1000+', label: 'DSA Problems Solved' },
   { value: '3+', label: 'Advanced Full-Stack Projects' },
