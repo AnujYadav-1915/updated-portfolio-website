@@ -405,16 +405,29 @@ const PortfolioPage = ({ theme }) => {
         {/* AWS Certifications - clickable badges */}
         {portfolioData.certifications && (
           <div className="certSection">
-            <p className="certEyebrow">AWS Certifications (7x Certified)</p>
+            <p className="certEyebrow">Certifications ({portfolioData.certifications.length}x Certified)</p>
             <div className="certGrid">
-              {portfolioData.certifications.map((cert, i) => (
-                <div className="certCard stagger-item" key={cert.name}
-                  style={{ '--stagger-delay': `${i * 80}ms` }}>
-                  <span className="certIcon">{cert.icon}</span>
-                  <span className="certName">{cert.name}</span>
-                  <span className="certVerified">✓ Verified</span>
-                </div>
-              ))}
+              {portfolioData.certifications.map((cert, i) => {
+                const inner = (
+                  <>
+                    <span className="certIcon">{cert.icon}</span>
+                    <span className="certName">{cert.name}</span>
+                    <span className="certVerified">{cert.pdf ? '↗ View' : '✓ Verified'}</span>
+                  </>
+                );
+                return cert.pdf ? (
+                  <a href={cert.pdf} target="_blank" rel="noreferrer"
+                    className="certCard certCardLink stagger-item" key={cert.name}
+                    style={{ '--stagger-delay': `${i * 80}ms` }}>
+                    {inner}
+                  </a>
+                ) : (
+                  <div className="certCard stagger-item" key={cert.name}
+                    style={{ '--stagger-delay': `${i * 80}ms` }}>
+                    {inner}
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}
