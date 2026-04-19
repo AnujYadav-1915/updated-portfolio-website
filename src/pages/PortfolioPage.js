@@ -9,16 +9,6 @@ const skillGroups = [
   { title: 'Databases', key: 'databases' },
   { title: 'Tools & Platforms', key: 'tools' },
   { title: 'Core CS', key: 'fundamentals' },
-  {
-    metric: 'AI Product Engineering',
-    headline: 'From model to user value',
-    proof: 'Designed practical AI workflows for resume scoring, interview simulation, and skill-gap guidance.',
-  },
-  {
-    metric: 'Cloud & Delivery',
-    headline: 'Deployment-first mindset',
-    proof: 'Shipped projects to live environments with clean APIs, auth, and scalable architecture patterns.',
-  },
 ];
 const heroStats = [
   { value: '1000+', label: 'DSA Problems Solved' },
@@ -56,11 +46,7 @@ const sectionItems = [
   { id: 'contact', label: 'Contact' },
 ];
 
-const recruiterSectionItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'recruiter-snapshot', label: 'Snapshot' },
-  { id: 'contact', label: 'Contact' },
-];
+
 
 const mobileSectionItems = [
   { id: 'home', label: 'Home' },
@@ -88,7 +74,6 @@ const proofOfWork = (links) => [
 
 const PortfolioPage = ({ theme }) => {
   const [activeSection, setActiveSection] = useState('home');
-  const [recruiterMode, setRecruiterMode] = useState(false);
 
   useEffect(() => {
     const sections = document.querySelectorAll('[data-section-id]');
@@ -174,8 +159,7 @@ const PortfolioPage = ({ theme }) => {
         </div>
       </section>
 
-        <>
-            <section id="impact" data-section-id="impact" className="portfolioSection scrollReveal">
+        <section id="impact" data-section-id="impact" className="portfolioSection scrollReveal">
               <h2><span>01</span> Featured Impact</h2>
               <div className="impactGrid">
                 {featuredImpact.map((item) => (
@@ -322,12 +306,10 @@ const PortfolioPage = ({ theme }) => {
                 ))}
               </ul>
             </section>
-          </>
-        )}
 
         <section id="contact" data-section-id="contact" className="portfolioSection scrollReveal contactSection">
         <div className="contactCard">
-            <h2><span>{recruiterMode ? '02' : '08'}</span> Let&apos;s Connect</h2>
+            <h2><span>08</span> Let&apos;s Connect</h2>
           <p>Reach out for internships, full-time roles, collaborations, and product discussions.</p>
           <div className="recruiterActions">
             <a className="btnPrimary" href={portfolioData.links.resume} target="_blank" rel="noreferrer">View Resume</a>
