@@ -26,7 +26,7 @@ export const portfolioData = {
     { name: 'JS DSA (freeCodeCamp)', icon: '📜', pdf: process.env.PUBLIC_URL + '/certs/freecodecamp.org_certification_javascript-algorithms-and-data-structures-v8.pdf' },
     { name: 'Front-End Libraries (freeCodeCamp)', icon: '⚛', pdf: process.env.PUBLIC_URL + '/certs/freecodecamp.org_certification_front-end-development-libraries.pdf' },
     { name: 'Data Visualization (freeCodeCamp)', icon: '📈', pdf: process.env.PUBLIC_URL + '/certs/freecodecamp.org_certification_data-visualization.pdf' },
-    { name: 'Responsive Web Design (freeCodeCamp)', icon: '🌐', pdf: process.env.PUBLIC_URL + '/certs/freecodecamp.org_certificato-responsive-web-design.pdf' },
+    { name: 'Responsive Web Design (freeCodeCamp)', icon: '🌐', pdf: process.env.PUBLIC_URL + '/certs/freecodecamp.org_certification_responsive-web-design.pdf' },
   ],
   skills: {
     languages: ['C', 'Python', 'C++', 'JavaScript'],
@@ -97,8 +97,8 @@ export const portfolioData = {
       image: process.env.PUBLIC_URL + '/project-chat-app.png',
       metrics: ['Realtime delivery events', 'Typing + online presence', 'Authenticated messaging'],
       stack: ['React', 'Node.js', 'Express', 'Socket.IO', 'MongoDB'],
-      demoLink: 'https://github.com/AnujYadav-1915?tab=repositories',
-      repoLink: 'https://github.com/AnujYadav-1915?tab=repositories',
+      demoLink: '#', // TODO: Add real chat app demo link
+      repoLink: '#', // TODO: Add real chat app repo link
       caseStudy: {
         problem: 'Users needed a reliable real-time messaging experience with presence and typing indicators in a secure, stateful environment.',
         architecture: 'React frontend + Node/Express backend with Socket.IO for event-driven messaging, JWT auth middleware, and MongoDB for message persistence.',
@@ -159,20 +159,3 @@ export const portfolioData = {
   ],
 };
 
-export const themeOptions = [
-  {
-    id: 'neo-glass',
-    label: 'Neo Glass Dark',
-    short: 'Luxury glassmorphism + neon accents',
-  },
-  {
-    id: 'aurora-minimal',
-    label: 'Aurora Minimal',
-    short: 'Calm gradients + clean premium layout',
-  },
-  {
-    id: 'cyber-motion',
-    label: 'Cyber Motion',
-    short: 'High-energy grid + bold animated contrast',
-  },
-];
