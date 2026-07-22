@@ -1,10 +1,3 @@
-export const themeOptions = [
-  { id: 'nordic-slate', name: 'Nordic Slate', tag: 'Charcoal & Tech Bronze' },
-  { id: 'vercel-geist', name: 'Vercel Geist 2026', tag: 'Pure Monochrome & Slate' },
-  { id: 'arc-electric', name: 'Arc Electric IDE', tag: 'Obsidian & Electric Cyan' },
-  { id: 'github-dark', name: 'GitHub Dark High-Contrast', tag: 'Developer Charcoal & Sky Blue' },
-];
-
 export const skillGroups = [
   { title: 'Programming Languages', key: 'languages' },
   { title: 'Frontend', key: 'frontend' },

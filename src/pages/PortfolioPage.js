@@ -12,26 +12,11 @@ import EducationSection from '../components/EducationSection';
 import AchievementsSection from '../components/AchievementsSection';
 import ContactSection from '../components/ContactSection';
 import NavigationRail from '../components/NavigationRail';
-import ThemeSwitcher from '../components/ThemeSwitcher';
 
 const PortfolioPage = () => {
   const [activeSection, setActiveSection] = useState('home');
-  const [currentTheme, setCurrentTheme] = useState(() => {
-    return localStorage.getItem('portfolio_theme') || 'nordic-slate';
-  });
-
   const mainRef = useRef(null);
   const cursorRef = useRef(null);
-
-  /* Theme persistence handler */
-  const handleSetTheme = (themeId) => {
-    setCurrentTheme(themeId);
-    localStorage.setItem('portfolio_theme', themeId);
-  };
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-  }, [currentTheme]);
 
   /* Scroll-reveal observer */
   useEffect(() => {
@@ -101,10 +86,7 @@ const PortfolioPage = () => {
   };
 
   return (
-    <main className={`portfolioPage theme-${currentTheme}`} ref={mainRef} data-theme={currentTheme}>
-      {/* Theme Switcher Widget floating header bar */}
-      <ThemeSwitcher currentTheme={currentTheme} setTheme={handleSetTheme} />
-
+    <main className="portfolioPage theme-nordic-slate" ref={mainRef}>
       {/* Glow cursor */}
       <div className="glowCursor" ref={cursorRef} aria-hidden="true" />
 

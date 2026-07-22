@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 html {
   scroll-behavior: smooth;
 }
 
 /* ==========================================================================
-   2026 HUMAN-CRAFTED THEME DEFINITIONS & CSS VARIABLES
+   NORDIC SLATE DESIGN SYSTEM & STYLING
    ========================================================================== */
 
-/* Theme 1: Nordic Slate & Tech Bronze (Default - Charcoal & Warm Amber Gold) */
-:root, [data-theme="nordic-slate"] {
+:root {
   --bg-main: #0f172a;
   --surface-main: #1e293b;
   --surface-strong: #334155;
@@ -22,144 +21,15 @@ html {
   --chip-bg: rgba(245, 158, 11, 0.07);
   --chip-border: rgba(245, 158, 11, 0.22);
   --glow-color: rgba(245, 158, 11, 0.12);
-  --font-family-body: 'Inter', sans-serif;
-  --font-family-code: 'Fira Code', monospace;
-}
-
-/* Theme 2: Vercel Geist 2026 (Pure Monochrome & Slate) */
-[data-theme="vercel-geist"] {
-  --bg-main: #0a0a0a;
-  --surface-main: #121212;
-  --surface-strong: #1a1a1a;
-  --text-main: #ffffff;
-  --text-muted: #a1a1aa;
-  --accent-primary: #ffffff; /* Crisp Pure White */
-  --accent-secondary: #10b981; /* Emerald Green */
-  --border-subtle: #262626;
-  --border-hover: #525252;
-  --chip-bg: rgba(255, 255, 255, 0.05);
-  --chip-border: #333333;
-  --glow-color: rgba(255, 255, 255, 0.08);
   --font-family-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-family-code: 'JetBrains Mono', monospace;
-}
-
-/* Theme 3: Arc Electric IDE (Obsidian & Electric Cyan) */
-[data-theme="arc-electric"] {
-  --bg-main: #0d0e15;
-  --surface-main: #151724;
-  --surface-strong: #1e2235;
-  --text-main: #f3f4f6;
-  --text-muted: #9ca3af;
-  --accent-primary: #00f0ff; /* Electric Cyan */
-  --accent-secondary: #8b5cf6; /* Electric Violet */
-  --border-subtle: rgba(0, 240, 255, 0.18);
-  --border-hover: rgba(0, 240, 255, 0.5);
-  --chip-bg: rgba(0, 240, 255, 0.06);
-  --chip-border: rgba(0, 240, 255, 0.25);
-  --glow-color: rgba(0, 240, 255, 0.15);
-  --font-family-body: 'Inter', sans-serif;
-  --font-family-code: 'JetBrains Mono', monospace;
-}
-
-/* Theme 4: GitHub Dark High-Contrast (Developer Charcoal & Sky Blue) */
-[data-theme="github-dark"] {
-  --bg-main: #0d1117;
-  --surface-main: #161b22;
-  --surface-strong: #21262d;
-  --text-main: #f0f6fc;
-  --text-muted: #8b949e;
-  --accent-primary: #58a6ff; /* GitHub Blue */
-  --accent-secondary: #3fb950; /* GitHub Green */
-  --border-subtle: #30363d;
-  --border-hover: #58a6ff;
-  --chip-bg: rgba(110, 118, 129, 0.1);
-  --chip-border: #30363d;
-  --glow-color: rgba(88, 166, 255, 0.12);
-  --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-family-code: 'JetBrains Mono', monospace;
+  --font-family-code: 'Fira Code', 'JetBrains Mono', monospace;
 }
 
 .appShell {
   min-height: 100vh;
   color: var(--text-main);
   background: var(--bg-main);
-  transition: background 300ms ease, color 300ms ease;
 }
-
-/* ── Theme Switcher Widget ── */
-.themeSwitcherWidget {
-  position: fixed;
-  top: 16px;
-  right: 20px;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 14px;
-  border: 1px solid var(--chip-border);
-  background: color-mix(in srgb, var(--surface-main), black 20%);
-  backdrop-filter: blur(16px);
-  border-radius: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transition: border-color 200ms ease;
-}
-.themeWidgetLabel {
-  font-family: var(--font-family-code);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-.themeButtonsGroup {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.themeBtn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 11px;
-  border: 1px solid var(--border-subtle);
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--text-muted);
-  font-family: var(--font-family-code);
-  font-size: 0.68rem;
-  font-weight: 500;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 180ms ease;
-}
-.themeBtn:hover {
-  border-color: var(--accent-primary);
-  color: var(--text-main);
-  background: color-mix(in srgb, var(--accent-primary), transparent 90%);
-}
-.themeBtn.active {
-  border-color: var(--accent-primary);
-  background: var(--accent-primary);
-  color: #ffffff;
-  box-shadow: 0 0 14px color-mix(in srgb, var(--accent-primary), transparent 60%);
-}
-[data-theme="vercel-geist"] .themeBtn.active {
-  color: #000000;
-  font-weight: 700;
-}
-[data-theme="arc-electric"] .themeBtn.active {
-  color: #0d0e15;
-  font-weight: 700;
-}
-.themeDot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: currentColor;
-}
-.themeDot[data-theme-id="nordic-slate"] { background: #f59e0b; }
-.themeDot[data-theme-id="vercel-geist"] { background: #ffffff; }
-.themeDot[data-theme-id="arc-electric"] { background: #00f0ff; }
-.themeDot[data-theme-id="github-dark"] { background: #58a6ff; }
 
 /* ── Glow Cursor ── */
 .glowCursor {
@@ -182,7 +52,6 @@ html {
   color: var(--text-main);
   font-family: var(--font-family-body);
   background: var(--bg-main);
-  transition: background 300ms ease, color 300ms ease;
   min-height: 100vh;
 }
 .ambientFx {
@@ -272,7 +141,7 @@ html {
   grid-template-columns: 1.2fr 0.8fr;
   gap: 28px;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 80px;
 }
 .heroBadge {
   display: inline-flex;
@@ -361,15 +230,9 @@ html {
 }
 .btnPrimary {
   background: var(--accent-primary);
-  color: #ffffff;
+  color: #0f172a;
   border-color: var(--accent-primary);
   box-shadow: 0 4px 14px color-mix(in srgb, var(--accent-primary), transparent 60%);
-}
-[data-theme="vercel-geist"] .btnPrimary {
-  color: #000000;
-}
-[data-theme="arc-electric"] .btnPrimary {
-  color: #0d0e15;
 }
 .btnOutline {
   color: var(--text-main);
@@ -995,21 +858,9 @@ html {
 
 /* ── Responsive Media Queries ── */
 @media (max-width: 980px) {
-  .themeSwitcherWidget {
-    top: 12px;
-    right: 12px;
-    padding: 6px 10px;
-  }
-  .themeWidgetLabel {
-    display: none;
-  }
-  .themeBtn {
-    padding: 4px 8px;
-    font-size: 0.62rem;
-  }
   .heroSection {
     grid-template-columns: 1fr;
-    padding-top: 80px;
+    padding-top: 60px;
   }
   .projectGrid, .skillGroupGrid, .eduTimeline, .impactGrid, .nowGrid, .proofGrid, .recruiterActions, .certGrid, .contactGrid, .achievementGrid {
     grid-template-columns: 1fr;
