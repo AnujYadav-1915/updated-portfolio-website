@@ -1,3 +1,9 @@
+export const themeOptions = [
+  { id: 'linear-minimalist', name: 'Linear Minimalist', tag: 'Slate & Indigo Modern' },
+  { id: 'nordic-slate', name: 'Nordic Slate', tag: 'Charcoal & Amber Gold' },
+  { id: 'terminal-clean', name: 'Terminal Clean', tag: 'Obsidian & Monospace Cyan' },
+];
+
 export const skillGroups = [
   { title: 'Programming Languages', key: 'languages' },
   { title: 'Frontend', key: 'frontend' },
@@ -15,32 +21,32 @@ export const heroStats = [
 
 export const featuredImpact = [
   {
-    metric: 'Real-time Systems',
-    headline: 'Low-latency collaborative apps',
-    proof: 'Built socket-driven products with instant state sync and production-ready event flows.',
+    metric: 'Real-Time Systems',
+    headline: 'Low-latency collaborative web apps',
+    proof: 'Built WebSocket event pipelines with instant state sync and room-based session isolation.',
     icon: '⚡',
   },
   {
-    metric: 'AI Product Engineering',
-    headline: 'From model to user value',
-    proof: 'Designed practical AI workflows for resume scoring, interview simulation, and skill-gap guidance.',
-    icon: '🧠',
+    metric: 'Full-Stack & APIs',
+    headline: 'Clean backend architecture',
+    proof: 'Designed RESTful APIs, JWT/RBAC auth systems, and database query optimizations across MERN/Next.js projects.',
+    icon: '⚙️',
   },
   {
-    metric: 'Cloud & Delivery',
-    headline: 'Deployment-first mindset',
-    proof: 'Shipped projects to live environments with clean APIs, auth, and scalable architecture patterns.',
+    metric: 'Cloud & Infrastructure',
+    headline: 'Production-ready deployment',
+    proof: 'Shipped containerized and cloud-hosted applications with custom Redis caching and high throughput.',
     icon: '☁️',
   },
 ];
 
 export const sectionItems = [
   { id: 'home', label: 'Home', icon: '◆' },
-  { id: 'impact', label: 'Impact', icon: '◈' },
-  { id: 'now-building', label: 'Now', icon: '▸' },
-  { id: 'skills', label: 'Skills', icon: '◇' },
+  { id: 'experience', label: 'Experience', icon: '💼' },
   { id: 'projects', label: 'Projects', icon: '▦' },
-  { id: 'proof', label: 'Proof', icon: '✦' },
+  { id: 'impact', label: 'Highlights', icon: '◈' },
+  { id: 'skills', label: 'Skills', icon: '◇' },
+  { id: 'proof', label: 'Links', icon: '✦' },
   { id: 'education', label: 'Education', icon: '◎' },
   { id: 'achievements', label: 'Wins', icon: '★' },
   { id: 'contact', label: 'Contact', icon: '◉' },
@@ -48,8 +54,9 @@ export const sectionItems = [
 
 export const mobileSectionItems = [
   { id: 'home', label: 'Home' },
+  { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
-  { id: 'proof', label: 'Proof' },
+  { id: 'proof', label: 'Links' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -63,11 +70,11 @@ export const skillTokenMap = {
 export const getSkillToken = (skill) => skillTokenMap[skill] || skill.slice(0, 2).toUpperCase();
 
 export const proofOfWork = (links) => [
-  { label: 'GitHub', href: links.github, blurb: 'Source code, commits, and repository activity.', icon: '⌨' },
-  { label: 'LeetCode', href: links.leetcode, blurb: 'Algorithm practice consistency and problem-solving depth.', icon: '🧩' },
-  { label: 'CodeChef', href: links.codechef, blurb: 'Competitive coding performance and ranking history.', icon: '🏆' },
-  { label: 'LinkedIn', href: links.linkedin, blurb: 'Professional timeline, certifications, and network.', icon: '🔗' },
-  { label: 'Resume', href: links.resume, blurb: 'One-page technical snapshot for quick recruiter review.', icon: '📄' },
+  { label: 'GitHub', href: links.github, blurb: 'Source code, commits, and project repositories.', icon: '⌨' },
+  { label: 'LeetCode', href: links.leetcode, blurb: 'Data structures & algorithms problem-solving profile.', icon: '🧩' },
+  { label: 'CodeChef', href: links.codechef, blurb: 'Competitive programming profile and rating history.', icon: '🏆' },
+  { label: 'LinkedIn', href: links.linkedin, blurb: 'Professional timeline, background, and connection network.', icon: '🔗' },
+  { label: 'Resume', href: links.resume, blurb: 'Technical resume for recruiter review.', icon: '📄' },
 ];
 
 export const statusColors = {

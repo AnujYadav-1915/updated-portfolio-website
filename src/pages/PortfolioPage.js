@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import './PortfolioPage.css';
 
 import HeroSection from '../components/HeroSection';
+import ExperienceSection from '../components/ExperienceSection';
 import ImpactSection from '../components/ImpactSection';
 import NowBuildingSection from '../components/NowBuildingSection';
 import SkillsSection from '../components/SkillsSection';
@@ -11,14 +12,28 @@ import EducationSection from '../components/EducationSection';
 import AchievementsSection from '../components/AchievementsSection';
 import ContactSection from '../components/ContactSection';
 import NavigationRail from '../components/NavigationRail';
+import ThemeSwitcher from '../components/ThemeSwitcher';
 
-const PortfolioPage = ({ theme }) => {
+const PortfolioPage = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    return localStorage.getItem('portfolio_theme') || 'linear-minimalist';
+  });
+
   const mainRef = useRef(null);
   const cursorRef = useRef(null);
 
-  /* Scroll-reveal observer — uses a lower threshold and no negative rootMargin
-     so that tall sections (like projects) always trigger */
+  /* Theme persistence handler */
+  const handleSetTheme = (themeId) => {
+    setCurrentTheme(themeId);
+    localStorage.setItem('portfolio_theme', themeId);
+  };
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  }, [currentTheme]);
+
+  /* Scroll-reveal observer */
   useEffect(() => {
     const sections = document.querySelectorAll('[data-section-id]');
 
@@ -31,7 +46,7 @@ const PortfolioPage = ({ theme }) => {
           }
         });
       },
-      { threshold: 0.08, rootMargin: '0px 0px -10% 0px' },
+      { threshold: 0.08, rootMargin: '0px 0px -10% 0px' }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -49,7 +64,7 @@ const PortfolioPage = ({ theme }) => {
           }
         });
       },
-      { threshold: 0.05, rootMargin: '0px 0px -5% 0px' },
+      { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
     );
     cards.forEach((card) => observer.observe(card));
     return () => observer.disconnect();
@@ -86,7 +101,10 @@ const PortfolioPage = ({ theme }) => {
   };
 
   return (
-    <main className={`portfolioPage ${theme}`} ref={mainRef}>
+    <main className={`portfolioPage theme-${currentTheme}`} ref={mainRef} data-theme={currentTheme}>
+      {/* Theme Switcher Widget floating header bar */}
+      <ThemeSwitcher currentTheme={currentTheme} setTheme={handleSetTheme} />
+
       {/* Glow cursor */}
       <div className="glowCursor" ref={cursorRef} aria-hidden="true" />
 
@@ -101,13 +119,15 @@ const PortfolioPage = ({ theme }) => {
         handleTilt={handleTilt}
         handleTiltReset={handleTiltReset}
       />
-      <ImpactSection handleTilt={handleTilt} handleTiltReset={handleTiltReset} />
-      <NowBuildingSection handleTilt={handleTilt} handleTiltReset={handleTiltReset} />
-      <SkillsSection handleTilt={handleTilt} handleTiltReset={handleTiltReset} />
+
+      <ExperienceSection handleTilt={handleTilt} handleTiltReset={handleTiltReset} />
       <ProjectsSection />
+      <ImpactSection handleTilt={handleTilt} handleTiltReset={handleTiltReset} />
+      <SkillsSection handleTilt={handleTilt} handleTiltReset={handleTiltReset} />
       <ProofSection handleTilt={handleTilt} handleTiltReset={handleTiltReset} />
       <EducationSection handleTilt={handleTilt} handleTiltReset={handleTiltReset} />
       <AchievementsSection />
+      <NowBuildingSection handleTilt={handleTilt} handleTiltReset={handleTiltReset} />
       <ContactSection handleTilt={handleTilt} handleTiltReset={handleTiltReset} />
     </main>
   );
