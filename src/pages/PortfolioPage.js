@@ -17,7 +17,7 @@ import ThemeSwitcher from '../components/ThemeSwitcher';
 const PortfolioPage = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [currentTheme, setCurrentTheme] = useState(() => {
-    return localStorage.getItem('portfolio_theme') || 'linear-minimalist';
+    return localStorage.getItem('portfolio_theme') || 'nordic-slate';
   });
 
   const mainRef = useRef(null);
