@@ -8,9 +8,9 @@ export const skillGroups = [
 ];
 
 export const heroStats = [
-  { value: '1000+', label: 'DSA Problems Solved' },
+  { value: '500+', label: 'DSA Problems Solved' },
   { value: '3+', label: 'Advanced Full-Stack Projects' },
-  { value: '7+', label: 'AWS Certifications' },
+  { value: 'Several', label: 'Certifications' },
 ];
 
 export const featuredImpact = [
