@@ -1,9 +1,9 @@
 export const portfolioData = {
   name: 'Anuj Kumar',
   role: 'Software Engineer',
-  tagline: 'Full-Stack Developer focused on real-time systems, scalable APIs, and modern web applications.',
+  tagline: 'Building scalable web applications, real-time backend systems, and modern full-stack products.',
   summary:
-    'Software Engineer with experience building production-grade web applications, low-latency WebSocket backends, and full-stack platforms. Solid foundation in Data Structures, Algorithms, System Design, and DBMS.',
+    'Software Engineer and 2026 pass-out targeting Graduate Trainee – Digital roles, with experience building scalable web applications and REST APIs using React.js, Next.js, Node.js, and Express.js. Demonstrated track record of optimizing backend performance, achieving sub-200ms latency, and managing cloud infrastructure handling 50+ monthly redirects on AWS. Strong collaborative foundation in Data Structures, Algorithms, System Design, DBMS, and CI/CD automation.',
   links: {
     email: 'mailto:anujyadav11112003@gmail.com',
     calendar: 'https://calendly.com/anujyadav11112003',
@@ -20,7 +20,7 @@ export const portfolioData = {
       role: 'Software Developer',
       type: 'Remote',
       duration: 'Jan 2024 — Mar 2024',
-      summary: 'Engineered full-stack web applications using MERN stack, optimized frontend components, and built REST APIs.',
+      summary: 'Engineered full-stack features via MERN stack, boosting page load speeds by 10% using lazy loading and API optimization.',
       points: [
         'Engineered full-stack features via MERN stack, boosting page load speeds by 10% using lazy loading and API optimization.',
         'Built secure REST APIs and MongoDB models with authentication and logging for platforms serving 50+ monthly active users.',
@@ -32,8 +32,8 @@ export const portfolioData = {
   certifications: [
     { name: 'Walmart Advanced Software Engineering (Forage)', icon: '🛒', pdf: process.env.PUBLIC_URL + '/certs/Walmart-Advanced-Software-Engineering-Forage.pdf' },
     { name: 'Citi Software Development (Forage)', icon: '🏦', pdf: process.env.PUBLIC_URL + '/certs/Citi-Software-Development-Forage.pdf' },
-    { name: 'AWS AI Practitioner', icon: '🤖', pdf: process.env.PUBLIC_URL + '/certs/AWS-AI-Practitioner-certificate.pdf' },
     { name: 'AWS Cloud Practitioner', icon: '☁️', pdf: process.env.PUBLIC_URL + '/certs/AWS-Cloud-practitioner-Certificate.pdf' },
+    { name: 'AWS AI Practitioner', icon: '🤖', pdf: process.env.PUBLIC_URL + '/certs/AWS-AI-Practitioner-certificate.pdf' },
     { name: 'AWS Machine Learning', icon: '🧠', pdf: process.env.PUBLIC_URL + '/certs/AWSMLCertificate.pdf' },
     { name: 'AWS Training & Skill Builder (7 Badges)', icon: '⚡' },
     { name: 'AI Outskill Certificate', icon: '✨', pdf: process.env.PUBLIC_URL + '/certs/AIOutskillCertificate.pdf' },
@@ -43,25 +43,25 @@ export const portfolioData = {
     { name: 'Responsive Web Design (freeCodeCamp)', icon: '🌐', pdf: process.env.PUBLIC_URL + '/certs/freecodecamp.org_certification_responsive-web-design.pdf' },
   ],
   skills: {
-    languages: ['JavaScript', 'TypeScript', 'C++', 'Python', 'C', 'SQL'],
-    frontend: ['React.js', 'Next.js', 'Redux', 'HTML5', 'CSS3', 'Tailwind CSS', 'SCSS', 'Bootstrap'],
-    backend: ['Node.js', 'Express.js', 'REST APIs', 'GraphQL', 'JWT Authentication', 'WebSockets', 'RBAC'],
-    databases: ['MongoDB', 'PostgreSQL (Neon)', 'Redis', 'MySQL'],
-    tools: ['Git', 'GitHub', 'Docker', 'Postman', 'Vercel', 'Render', 'npm'],
-    fundamentals: ['Data Structures & Algorithms', 'System Design', 'Object-Oriented Programming (OOP)', 'DBMS', 'Operating Systems', 'Computer Networks'],
+    languages: ['JavaScript', 'TypeScript', 'C++', 'Python', 'SQL'],
+    frontend: ['React.js', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS'],
+    backend: ['Node.js', 'Express.js', 'REST APIs', 'WebSockets', 'GraphQL', 'JWT', 'RBAC'],
+    databases: ['PostgreSQL (Neon)', 'MongoDB', 'Redis'],
+    tools: ['AWS (EC2, S3, Lambda)', 'Docker', 'Git', 'Vercel', 'Render'],
+    fundamentals: ['Data Structures & Algorithms', 'System Design', 'OOP', 'DBMS', 'Operating Systems', 'Computer Networks'],
   },
   projects: [
     {
       title: 'Real-Time Collaborative Code Editor',
-      category: 'Realtime Infrastructure',
+      category: 'React • Node.js • WebSockets',
       image: process.env.PUBLIC_URL + '/project-code-editor.png',
-      stack: ['Node.js', 'Express', 'Socket.IO', 'Monaco Editor'],
+      stack: ['React', 'Node.js', 'WebSockets', 'Monaco Editor'],
       demoLink: 'https://realtime-collaborative-code-editor-master.onrender.com/',
       repoLink: 'https://github.com/AnujYadav-1915/Realtime-Collaborative-Code-Editor-master',
       caseStudy: {
-        problem: 'Distributed teams needed a synchronized code editor with sub-200ms update latencies and safe multi-user sessions.',
-        architecture: 'Express + Socket.IO event pipeline with room isolation and Monaco Editor state synchronization.',
-        result: 'Supported 10+ concurrent users per room with instantaneous propagation and conflict-free collaboration.',
+        problem: 'Teams required synchronized code editing with real-time updates and sub-200ms latency across distributed clients.',
+        architecture: 'React + Node.js backend with event-driven WebSocket synchronization pipelines.',
+        result: 'Supported 10+ simultaneous users with sub-200ms latency, boosting responsiveness and user retention.',
       },
       points: [
         'Led development of a concurrent collaboration engine supporting 10+ simultaneous users with sub-200ms latency.',
@@ -70,16 +70,16 @@ export const portfolioData = {
       ],
     },
     {
-      title: 'LearnMate — AI Career Platform',
-      category: 'Full-Stack Application',
+      title: 'LearnMate – AI Career Platform',
+      category: 'React • Node.js • Python • MongoDB',
       image: process.env.PUBLIC_URL + '/project-ai-coach.png',
-      stack: ['Next.js', 'React', 'Node.js', 'Python', 'Clerk', 'Inngest', 'MongoDB', 'PostgreSQL'],
+      stack: ['React', 'Node.js', 'Python', 'MongoDB', 'Clerk', 'Inngest', 'PostgreSQL'],
       demoLink: 'https://ai-career-coach-agent-five.vercel.app/',
       repoLink: 'https://github.com/AnujYadav-1915/Learnmate',
       caseStudy: {
-        problem: 'Job seekers needed automated resume scoring, skill-gap analysis, and realistic interview prep.',
-        architecture: 'Next.js application with Clerk authentication, async job processing with Inngest, and PostgreSQL persistence.',
-        result: 'Delivered an integrated platform serving 40+ active users with 99% uptime.',
+        problem: 'Job seekers needed automated resume analysis, interview preparation, and secure role-based access control.',
+        architecture: 'React & Node.js application with Python services, MongoDB, JWT RBAC, and automated CI/CD pipelines.',
+        result: 'Served 40+ active users with multi-layer authentication and 99% production deployment uptime.',
       },
       points: [
         'Spearheaded an AI-powered platform for automated resume analysis and interview prep for 40+ users.',
@@ -89,15 +89,15 @@ export const portfolioData = {
     },
     {
       title: 'URL Shortener (Vynkify)',
-      category: 'System Design',
+      category: 'Node.js • Express • Redis • MongoDB',
       image: process.env.PUBLIC_URL + '/project-url-shortener.png',
       stack: ['Node.js', 'Express', 'Redis', 'MongoDB'],
       demoLink: 'https://frontend-rust-ten-44.vercel.app/',
       repoLink: 'https://github.com/AnujYadav-1915/URL-Shortener',
       caseStudy: {
-        problem: 'Needed a scalable URL redirection service capable of handling high traffic with minimal database lookup latency.',
-        architecture: 'Node.js backend with Redis in-memory cache and MongoDB persistence.',
-        result: 'Handled 50+ monthly redirects with a 10% decrease in response latency and 0 packet loss.',
+        problem: 'Needed a reliable URL shortening service capable of handling redirects with low latency and zero key collisions.',
+        architecture: 'Node.js/Express service with MongoDB persistence and custom Redis caching strategies.',
+        result: 'Handled 50+ monthly redirects with a 10% latency decrease and zero packet loss.',
       },
       points: [
         'Constructed a reliable URL shortener handling 50+ monthly redirects with robust error handling and monitoring.',
@@ -123,11 +123,10 @@ export const portfolioData = {
     },
   ],
   achievements: [
+    'Solved 500+ Data Structures & Algorithms problems across LeetCode, CodeChef, and GeeksforGeeks.',
     'Completed Walmart Global Tech & Citi Advanced Software Engineering job simulations via Forage.',
-    'JavaScript Data Structures & Algorithms and Full-Stack certifications completed.',
-    'Solved 500+ DSA problems across LeetCode, CodeChef, GeeksforGeeks, and Coding Ninjas.',
-    'Completed AWS Cloud & AI Certifications along with 7 AWS technical training badges.',
-    'Built and deployed multiple production-facing portfolio projects with live demos and recruiter-ready case studies.',
+    'AWS Certified Cloud Practitioner, AWS AI Practitioner, AWS Machine Learning, and 7 AWS training badges.',
+    'FreeCodeCamp Certified (5x): Responsive Web Design, JS Algorithms & Data Structures, Front End Libraries, Data Visualization, Back End APIs.',
   ],
   nowBuilding: [
     {

@@ -5,29 +5,11 @@ html {
 }
 
 /* ==========================================================================
-   THEME DEFINITIONS & CSS VARIABLES
+   2026 HUMAN-CRAFTED THEME DEFINITIONS & CSS VARIABLES
    ========================================================================== */
 
-/* Theme 1: Linear Minimalist (Default - Modern Slate & Indigo/Emerald) */
-:root, [data-theme="linear-minimalist"] {
-  --bg-main: #0b0f17;
-  --surface-main: #131b29;
-  --surface-strong: #1b263b;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --accent-primary: #6366f1; /* Indigo */
-  --accent-secondary: #10b981; /* Emerald */
-  --border-subtle: rgba(255, 255, 255, 0.09);
-  --border-hover: rgba(99, 102, 241, 0.45);
-  --chip-bg: rgba(255, 255, 255, 0.04);
-  --chip-border: rgba(255, 255, 255, 0.12);
-  --glow-color: rgba(99, 102, 241, 0.15);
-  --font-family-body: 'Inter', system-ui, sans-serif;
-  --font-family-code: 'JetBrains Mono', monospace;
-}
-
-/* Theme 2: Nordic Slate & Tech Bronze (Charcoal & Warm Amber Gold) */
-[data-theme="nordic-slate"] {
+/* Theme 1: Nordic Slate & Tech Bronze (Default - Charcoal & Warm Amber Gold) */
+:root, [data-theme="nordic-slate"] {
   --bg-main: #0f172a;
   --surface-main: #1e293b;
   --surface-strong: #334155;
@@ -35,30 +17,66 @@ html {
   --text-muted: #cbd5e1;
   --accent-primary: #f59e0b; /* Amber Gold / Tech Bronze */
   --accent-secondary: #38bdf8; /* Sky Blue */
-  --border-subtle: rgba(245, 158, 11, 0.15);
-  --border-hover: rgba(245, 158, 11, 0.5);
-  --chip-bg: rgba(245, 158, 11, 0.06);
-  --chip-border: rgba(245, 158, 11, 0.2);
+  --border-subtle: rgba(245, 158, 11, 0.18);
+  --border-hover: rgba(245, 158, 11, 0.55);
+  --chip-bg: rgba(245, 158, 11, 0.07);
+  --chip-border: rgba(245, 158, 11, 0.22);
   --glow-color: rgba(245, 158, 11, 0.12);
   --font-family-body: 'Inter', sans-serif;
   --font-family-code: 'Fira Code', monospace;
 }
 
-/* Theme 3: Terminal Monospaced Clean (Obsidian & Monospace Cyan) */
-[data-theme="terminal-clean"] {
-  --bg-main: #050505;
-  --surface-main: #0d0d0d;
-  --surface-strong: #141414;
-  --text-main: #ecfdf5;
+/* Theme 2: Vercel Geist 2026 (Pure Monochrome & Slate) */
+[data-theme="vercel-geist"] {
+  --bg-main: #0a0a0a;
+  --surface-main: #121212;
+  --surface-strong: #1a1a1a;
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  --accent-primary: #ffffff; /* Crisp Pure White */
+  --accent-secondary: #10b981; /* Emerald Green */
+  --border-subtle: #262626;
+  --border-hover: #525252;
+  --chip-bg: rgba(255, 255, 255, 0.05);
+  --chip-border: #333333;
+  --glow-color: rgba(255, 255, 255, 0.08);
+  --font-family-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-code: 'JetBrains Mono', monospace;
+}
+
+/* Theme 3: Arc Electric IDE (Obsidian & Electric Cyan) */
+[data-theme="arc-electric"] {
+  --bg-main: #0d0e15;
+  --surface-main: #151724;
+  --surface-strong: #1e2235;
+  --text-main: #f3f4f6;
   --text-muted: #9ca3af;
-  --accent-primary: #06b6d4; /* Cyan */
-  --accent-secondary: #10b981; /* Emerald */
-  --border-subtle: rgba(6, 182, 212, 0.2);
-  --border-hover: rgba(6, 182, 212, 0.6);
-  --chip-bg: rgba(6, 182, 212, 0.05);
-  --chip-border: rgba(6, 182, 212, 0.25);
-  --glow-color: rgba(6, 182, 212, 0.16);
-  --font-family-body: 'JetBrains Mono', 'Fira Code', monospace;
+  --accent-primary: #00f0ff; /* Electric Cyan */
+  --accent-secondary: #8b5cf6; /* Electric Violet */
+  --border-subtle: rgba(0, 240, 255, 0.18);
+  --border-hover: rgba(0, 240, 255, 0.5);
+  --chip-bg: rgba(0, 240, 255, 0.06);
+  --chip-border: rgba(0, 240, 255, 0.25);
+  --glow-color: rgba(0, 240, 255, 0.15);
+  --font-family-body: 'Inter', sans-serif;
+  --font-family-code: 'JetBrains Mono', monospace;
+}
+
+/* Theme 4: GitHub Dark High-Contrast (Developer Charcoal & Sky Blue) */
+[data-theme="github-dark"] {
+  --bg-main: #0d1117;
+  --surface-main: #161b22;
+  --surface-strong: #21262d;
+  --text-main: #f0f6fc;
+  --text-muted: #8b949e;
+  --accent-primary: #58a6ff; /* GitHub Blue */
+  --accent-secondary: #3fb950; /* GitHub Green */
+  --border-subtle: #30363d;
+  --border-hover: #58a6ff;
+  --chip-bg: rgba(110, 118, 129, 0.1);
+  --chip-border: #30363d;
+  --glow-color: rgba(88, 166, 255, 0.12);
+  --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-family-code: 'JetBrains Mono', monospace;
 }
 
@@ -124,8 +142,12 @@ html {
   color: #ffffff;
   box-shadow: 0 0 14px color-mix(in srgb, var(--accent-primary), transparent 60%);
 }
-[data-theme="terminal-clean"] .themeBtn.active {
-  color: #050505;
+[data-theme="vercel-geist"] .themeBtn.active {
+  color: #000000;
+  font-weight: 700;
+}
+[data-theme="arc-electric"] .themeBtn.active {
+  color: #0d0e15;
   font-weight: 700;
 }
 .themeDot {
@@ -134,9 +156,10 @@ html {
   border-radius: 50%;
   background: currentColor;
 }
-.themeDot[data-theme-id="linear-minimalist"] { background: #6366f1; }
 .themeDot[data-theme-id="nordic-slate"] { background: #f59e0b; }
-.themeDot[data-theme-id="terminal-clean"] { background: #06b6d4; }
+.themeDot[data-theme-id="vercel-geist"] { background: #ffffff; }
+.themeDot[data-theme-id="arc-electric"] { background: #00f0ff; }
+.themeDot[data-theme-id="github-dark"] { background: #58a6ff; }
 
 /* ── Glow Cursor ── */
 .glowCursor {
@@ -342,8 +365,11 @@ html {
   border-color: var(--accent-primary);
   box-shadow: 0 4px 14px color-mix(in srgb, var(--accent-primary), transparent 60%);
 }
-[data-theme="terminal-clean"] .btnPrimary {
-  color: #050505;
+[data-theme="vercel-geist"] .btnPrimary {
+  color: #000000;
+}
+[data-theme="arc-electric"] .btnPrimary {
+  color: #0d0e15;
 }
 .btnOutline {
   color: var(--text-main);

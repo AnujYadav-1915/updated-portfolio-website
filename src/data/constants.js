@@ -1,7 +1,8 @@
 export const themeOptions = [
-  { id: 'linear-minimalist', name: 'Linear Minimalist', tag: 'Slate & Indigo Modern' },
-  { id: 'nordic-slate', name: 'Nordic Slate', tag: 'Charcoal & Amber Gold' },
-  { id: 'terminal-clean', name: 'Terminal Clean', tag: 'Obsidian & Monospace Cyan' },
+  { id: 'nordic-slate', name: 'Nordic Slate', tag: 'Charcoal & Tech Bronze' },
+  { id: 'vercel-geist', name: 'Vercel Geist 2026', tag: 'Pure Monochrome & Slate' },
+  { id: 'arc-electric', name: 'Arc Electric IDE', tag: 'Obsidian & Electric Cyan' },
+  { id: 'github-dark', name: 'GitHub Dark High-Contrast', tag: 'Developer Charcoal & Sky Blue' },
 ];
 
 export const skillGroups = [
@@ -23,7 +24,7 @@ export const featuredImpact = [
   {
     metric: 'Real-Time Systems',
     headline: 'Low-latency collaborative web apps',
-    proof: 'Built WebSocket event pipelines with instant state sync and room-based session isolation.',
+    proof: 'Built WebSocket event pipelines supporting 10+ simultaneous users with sub-200ms latency.',
     icon: '⚡',
   },
   {
@@ -35,7 +36,7 @@ export const featuredImpact = [
   {
     metric: 'Cloud & Infrastructure',
     headline: 'Production-ready deployment',
-    proof: 'Shipped containerized and cloud-hosted applications with custom Redis caching and high throughput.',
+    proof: 'Shipped cloud-hosted applications on AWS, Vercel, and Render with custom Redis caching and 99% uptime.',
     icon: '☁️',
   },
 ];
@@ -63,7 +64,7 @@ export const mobileSectionItems = [
 export const skillTokenMap = {
   'React.js': '⚛', 'Next.js': 'NX', 'Node.js': '⬡', 'Express.js': 'EX',
   'Socket.IO': '⚡', 'Python': 'PY', 'TypeScript': 'TS', 'JavaScript': 'JS',
-  'MongoDB': 'MG', 'PostgreSQL': 'PG', 'Docker': '🐳', 'AWS': '☁',
+  'MongoDB': 'MG', 'PostgreSQL (Neon)': 'PG', 'Docker': '🐳', 'AWS (EC2, S3, Lambda)': '☁',
   'Redux': 'RX', 'Tailwind CSS': 'TW', 'MySQL': 'MY',
 };
 
