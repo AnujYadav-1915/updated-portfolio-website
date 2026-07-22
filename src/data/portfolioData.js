@@ -97,10 +97,10 @@ export const portfolioData = {
       caseStudy: {
         problem: 'Needed a scalable URL redirection service capable of handling high traffic with minimal database lookup latency.',
         architecture: 'Node.js backend with Redis in-memory cache and MongoDB persistence.',
-        result: 'Handled 50K+ monthly redirects with a 10% decrease in response latency and 0 packet loss.',
+        result: 'Handled 50+ monthly redirects with a 10% decrease in response latency and 0 packet loss.',
       },
       points: [
-        'Constructed a reliable URL shortener handling 50K+ monthly redirects with robust error handling and monitoring.',
+        'Constructed a reliable URL shortener handling 50+ monthly redirects with robust error handling and monitoring.',
         'Decreased system latency by 10% via custom Redis caching strategies and targeted database query optimization.',
         'Devised a distributed unique ID generation mechanism, guaranteeing collision-free key mapping at scale.',
       ],
