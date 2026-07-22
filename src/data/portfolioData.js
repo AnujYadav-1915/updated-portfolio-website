@@ -109,7 +109,7 @@ export const portfolioData = {
         'High-throughput architecture designed for zero packet loss during redirect resolution.',
       ],
       points: [
-        'Constructed a high-throughput URL shortener handling 50+ monthly redirects with 0 packet loss.',
+        'Constructed a high-throughput URL shortener handling 50K+ monthly redirects with 0 packet loss.',
         'Decreased system latency by 10% via custom Redis caching strategies and targeted database query optimization.',
         'Devised a distributed unique ID generation mechanism, guaranteeing collision-free key mapping at scale.',
       ],
