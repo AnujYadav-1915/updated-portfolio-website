@@ -117,15 +117,15 @@ export const portfolioData = {
   ],
   education: [
     {
-      institute: 'Dr. A.P.J. Abdul Kalam Technical University',
+      institute: 'JSS Academy of Technical Education, Noida',
       degree: 'Bachelor of Technology (B.Tech)',
-      specialization: 'Computer Science & Engineering',
+      specialization: 'Electronics & Communication Engineering',
       duration: 'Nov 2022 — Jul 2026',
-      location: 'Uttar Pradesh, India',
+      location: 'Noida, Uttar Pradesh, India',
     },
     {
       institute: 'Army Public School (APS)',
-      degree: 'Senior Secondary Certificate',
+      degree: 'Senior Secondary Certificate (CBSE - 94.6%)',
       specialization: 'Engineering Science',
       duration: 'Apr 2020 — Jul 2021',
       location: 'India',
